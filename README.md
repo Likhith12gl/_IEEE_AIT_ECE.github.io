@@ -12,5 +12,4 @@ Website of AIT IEEE Student's chapter
 #### Events
 ![Events](https://user-images.githubusercontent.com/73239142/230459083-6766054d-8c45-4263-8887-c146111c676d.png)
 
-#### Contact
-![Contact](https://user-images.githubusercontent.com/73239142/230458949-f6f29888-7bc7-4626-8f7e-e08efa43c5e2.png)
+
