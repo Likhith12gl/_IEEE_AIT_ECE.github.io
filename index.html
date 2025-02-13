@@ -38,241 +38,702 @@
 <body>
   <!-- 2 shades of blue #0d6aed--main title & #00b4d8--navbar used in this website-->
    <!-- #ff2b2b--old red title color -->
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-lg-between">
+      
       <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Events</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Workshops</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+        <ul class="d-flex align-items-center ms-auto">
+          <li class="dropdown">
+            <a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#services">Events</a></li>
+              <li><a class="nav-link scrollto" href="#portfolio">Workshops</a></li>
+              <li><a class="nav-link scrollto" href="#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
-
+  
     </div>
   </header><!-- End Header -->
+  
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container" data-aos="fade-up">
 
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Welcome to <br><a>IEEE <span>AIT 25-26.</span></h1>
-          <h2>We are the most active student branch</h2>
-        </div>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center justify-content-center">
+  <!-- Responsive Video Background -->
+  <video autoplay muted loop id="hero-video" playsinline>
+    <source src="assets/img/vid3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+  <!-- Content Overlay -->
+  <div class="container content-overlay" data-aos="fade-up">
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-xxl-9 col-lg-9 col-md-10 col-sm-12 text-center">
+        <!-- Responsive Heading -->
+        <h1 class="responsive-heading">
+          Welcome to <br>
+          <span class="typewriter">IEEE <span class="highlight">ECMI 2025 - 26</span></span>
+        </h1>
       </div>
-
     </div>
-  </section>
+  </div>
+</section>
 
-  <main id="main">
+<!-- Add CSS for Responsiveness -->
+<style>
+  /* Ensure the video covers the entire hero section */
+  #hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+  }
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+  #hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
 
-        <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="assets/img/image.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-            <div class="section-title">
-              <h2>About us</h2>
-              <p>About IEEE AIT</p>
-            </div>
-            </ul>
-            <p class="fst-italic">The IEEE AIT Students Forum, established in 2003-04, is a vibrant student-led chapter of the Institute of Electrical and Electronics Engineers (IEEE) at Adichunchanagiri Institute of Technology (AIT), Chikmagalur. Dedicated to fostering innovation and technological excellence, the forum provides students with opportunities to enhance their technical skills and knowledge through seminars, workshops, and international conferences. Members benefit from IEEE’s extensive global network, gaining access to valuable resources such as the IEEE website, monthly technical magazines, and the latest industry trends.</p>  
-            <p class="fst-italic">The IEEE AIT Students Chapter, comprising 100 active members, is led by the Department of Electronics and Communication Engineering and collaborates with global societies such as GRSS and MTT-S. IEEE AIT takes pride in its achievements and contributions to technological advancements. Being part of this chapter enables students to stay updated with cutting-edge developments, build industrial skills, and contribute to innovation at a global level.</p>
+  /* Responsive Heading */
+  .responsive-heading {
+    font-size: 90px; /* Default size for large screens */
+    color: white; /* Ensure text is visible over the video */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Improve readability */
+    line-height: 1.2; /* Improve line spacing */
+  }
 
-            </p>
-          </div>
+  .responsive-heading .typewriter {
+    display: inline-block; /* Ensure the typewriter effect works properly */
+    white-space: nowrap; /* Prevent line breaks */
+  }
+
+  .responsive-heading .highlight {
+    color: #ffcc00; /* Highlight color for "ECMI 2025 - 26" */
+  }
+
+  /* Adjust font size for smaller screens */
+  @media (max-width: 1200px) {
+    .responsive-heading {
+      font-size: 70px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .responsive-heading {
+      font-size: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .responsive-heading {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .responsive-heading {
+      font-size: 24px; /* Smaller font size for mobile */
+    }
+    .responsive-heading .typewriter {
+      font-size: 20px; /* Even smaller for "IEEE ECMI 2025 - 26" */
+      white-space: nowrap; /* Force text to stay in one line */
+    }
+  }
+</style>
+
+
+
+    <!-- ======= About Trust Section ======= -->
+<section id="about-trust" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>About the Trust</p>
         </div>
-
+        <p class="fst-italic">
+          Sri Adichunchanagiri Shikshana Trust (SAST) was established in 1974. In its journey of commitments to the nation for more than five decades, SAST runs 515 value-based and quality-oriented educational institutions catering to 150,000+ students across the country, imparting education from primary to professional courses. The Trust focuses on providing education in semi-urban and rural areas, operating major institutions in the fields of Medicine, Engineering, Pharmacy, Ayurveda, Management, and other professional courses, including special education centers for destitute, physically handicapped (blind), and mentally challenged individuals.
+        </p>
       </div>
-    </section><!-- End About Section -->
+      <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+        <img src="assets/img/dr.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+</section><!-- End About Trust Section -->
+
+<!-- ======= About Institute Section ======= -->
+<section id="about-institute" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/img/image.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 order-2 order-lg-2 content" data-aos="fade-left" data-aos-delay="100">
+        <div class="section-title">
+          
+          <p>About the Institute</p>
+        </div>
+        <p class="fst-italic">
+          Adichunchanagiri Institute of Technology (AIT), situated in Chikkamagaluru, Karnataka, is a prestigious engineering college established in 1980. Affiliated with Visvesvaraya Technological University (VTU), Belagavi, and approved by AICTE, AIT holds accreditation from NBA and NAAC with an “A” grade.
+        </p>
+        <p class="fst-italic">
+          AIT offers undergraduate, postgraduate, and research programs across various engineering and technology disciplines. With well-equipped laboratories, modern infrastructure, and highly qualified faculty, the institute promotes research and innovation. Students are encouraged to engage in projects, technical competitions, and industry collaborations. AIT has active student chapters of IEEE, ISTE, and IEI, ensuring technical and professional growth. The institute’s strong industry connections offer excellent placement opportunities. Co-curricular and extracurricular activities help in holistic student development.
+        </p>
+      </div>
+    </div>
+  </div>
+</section><!-- End About Institute Section -->
+
+<!-- ======= About Department Section ======= -->
+<section id="about-department" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+        <div class="section-title">
+          
+          <p>About the Department</p>
+        </div>
+        <p class="fst-italic">
+          The Electronics and Communication Engineering department, established in 1981, has been affiliated with Visvesvaraya Technological University (VTU), Belagavi, Karnataka, since 1998. Recognized by AICTE and accredited twice by the National Board of Accreditation (NBA), the department offers UG, PG, and research programs, fostering student growth with a strong societal impact.
+        </p>
+        <p class="fst-italic">
+          The department boasts experienced faculty specializing in VLSI, embedded systems, digital communication, microwave and antenna technology, DSP, image processing, computer networks, nano-electronics, and MEMS. Well-equipped laboratories support research and projects with advanced software tools like Matlab, Tanner, LabVIEW, HFSS, Multisim, and Vivado, along with Spectrum and Logic Analyzers.
+        </p>
+      </div>
+      <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+        <img src="assets/img/ece.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+</section><!-- End About Department Section -->
+
+
+
+<!-- ======= About Conference Section ======= -->
+<section id="about-conference" class="about py-5" 
+         style="background: url('assets/img/image.png') no-repeat center center/cover; position: relative;">
+
+  <!-- Overlay to Improve Readability -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+
+  <div class="container position-relative" data-aos="fade-up">
+    
+    <!-- Content Section -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10 content text-center bg-white p-4 rounded shadow content-box" 
+           data-aos="fade-up" data-aos-delay="200">
+        <div class="section-title">
+          <h2 class="text-primary">About Us</h2>
+          <p class="font-weight-bold text-dark">About the Conference</p>
+        </div>
+        <p class="fst-italic text-muted">
+          The <strong>International Conference on Emerging Research in Smart Electronics, Communication Technologies, Informatics, and Machine Intelligence</strong> 
+          serves as a premier platform for <strong>researchers, academicians, industry professionals, and students</strong> to present and discuss the latest advancements, 
+          innovations, and challenges in these rapidly evolving domains.
+        </p>
+        <p class="fst-italic text-muted">
+          This conference aims to foster collaboration and knowledge exchange, focusing on cutting-edge topics such as:
+        </p>
+
+        <!-- Stylish List -->
+        <ul class="list-unstyled text-left d-inline-block">
+          <li><i class="bi bi-check-circle text-primary"></i> <strong>Smart electronics</strong> and embedded systems.</li>
+          <li><i class="bi bi-check-circle text-primary"></i> Emerging communication technologies, including <strong>IoT and 5G/6G</strong>.</li>
+          <li><i class="bi bi-check-circle text-primary"></i> Advanced informatics for <strong>data-driven solutions</strong>.</li>
+          <li><i class="bi bi-check-circle text-primary"></i> Breakthroughs in <strong>machine intelligence</strong> and AI applications.</li>
+        </ul>
+
+        <p class="fst-italic text-muted">
+          <strong>ECMI-2025</strong> welcomes contributions in the form of <strong>original research papers, innovative prototypes, and industrial case studies</strong>. 
+          By bringing together experts from academia and industry, the conference aims to <strong>inspire groundbreaking research</strong> and foster new partnerships.
+        </p>
+        <p class="fst-italic text-muted">
+          Participants will have the opportunity to explore <strong>emerging trends, engage in interdisciplinary discussions</strong>, and contribute to 
+          shaping the future of <span class="text-primary">technology and innovation</span>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End About Conference Section -->
+
+<style>
+  /* Hover Effect */
+  .content-box {
+    transition: 0.3s ease-in-out;
+    border-left: 5px solid #007bff;
+  }
+
+  .content-box:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+</style>
+
 
     
 
     <!-- ======= Events Section ======= -->
-    
-    <section id="services" class="services">
-      <div class="section-title">
-        <h2>Events</h2>
-        <p>events for IEEE 2025</p>
-      </div>
-      <div id="card-area">
-        <div class="wrapper">
-            <div class="slider-container">
-                <button id="prevBtn" class="nav-btn">
-                    <i class="fas fa-chevron-left"></i> <!-- Previous Button Icon -->
-                </button>
-                <div class="slider">
-                    <div class="cards-wrapper">
-                        <div class="card">
-                            <img alt="" src="assets/Poster/Laser Tag.jpg">
-                            <div class="overlay">
-                                <h3>Laser Tag</h3>
-                                <p>Laser tag showdown: 8 players, 2 teams, epic battle.</p>
-                                <a href="assets/Events/Laser Tag.pdf">Book Now</a>
-                            </div>
-                        </div>  
-                        <div class="card">
-                          <img alt="" src="assets/Poster/Laser Tag.jpg">
-                          <div class="overlay">
-                              <h3>Laser Tag</h3>
-                              <p>Laser tag showdown: 10 players, 2 teams, epic battle.</p>
-                              <a href="#">Book Now</a>
-                          </div>
-                      </div> 
-                        <div class="card">
-                            <img alt="" src="assets/Poster/Valorant.jpg">
-                            <div class="overlay">
-                                <h3>Valorant</h3>
-                                <p>Exciting Valorant 5v5 showdown awaits!</p>
-                                <a href="assets/Events/Valorant.pdf">Book Now</a>
-                            </div>
-                        </div>
-                        
-                        <div class="card">
-                            <img alt="" src="assets/Poster/BGMI.jpg">
-                            <div class="overlay">
-                                <h3>BGMI</h3>
-                                <p>Exciting BGMI TDM match with 5 players</p>
-                                <a href="assets/Events/BGMI.pdf">Book Now</a>
-                            </div>
-                        </div>
-                        <!-- Add more cards here -->
-                        <div class="card">
-                            <img alt="" src="assets/Poster/F1 Simulator.jpg">
-                            <div class="overlay">
-                                <h3>F1 Simulator</h3>
-                                <p>Experience thrilling F1 simulator racing</p>
-                                <a href="assets/Events/F1 Simulator.pdf">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img alt="" src="assets/Poster/IoT Workshop.jpg">
-                            <div class="overlay">
-                                <h3>IoT Workshop</h3>
-                                <p>Innovate with Technology with us!</p>
-                                <a href="assets/Events/IoT Workshop.pdf">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img alt="" src="assets/Poster/Catch the Baton.jpg">
-                            <div class="overlay">
-                                <h3>Catch the Baton</h3>
-                                <p>Catch the batons before they fall!</p>
-                                <a href="assets/Events/Catch the Baton.pdf">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                          <img alt="" src="assets/Poster/Art Workshop.jpg">
-                          <div class="overlay">
-                              <h3>Art Workshop</h3>
-                              <p>Learn to crochet beautiful art pieces together!</p>
-                              <a href="assets/Events/Art Workshop.pdf">Book Now</a>
-                          </div>
-                      </div>
-                    </div>
-                </div>
-                <button id="nextBtn" class="nav-btn">
-                    <i class="fas fa-chevron-right"></i> <!-- Next Button Icon -->
-                </button>
-            </div>
-        </div>
+
+<section id="tracks" class="tracks" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2 style="font-size: 36px; color: #343a40; font-weight: 700;">Technical Tracks</h2>
+      <p style="font-size: 20px; color: #6c757d;">Explore the Tracks for IEEE 2025</p>
     </div>
-
-    <script src="assets/js/slider-script.js"></script>
-    </section>
-    <!-- End Events Section -->
-
-   
-
-    <!-- new workshop section using grids -->
-    <section class="container" id="portfolio">
-      <div class="section-title">
-          <h2>Workshop</h2>
-          <p>Check our Workshops</p>
-        </div>
-      <div class="bento-container">
-        <div class="bento-item bento-item-large" style="background-image: url(assets/img/bento-svgs/agriculture.jpg);background-position: center;background-position-x: center;">
-          <h1>Remote Sensing In Agriculture</h1>
-          <div class="date-attach-flex">
-            <a href="https://www.linkedin.com/posts/ieee-AIT-student-chapter_sensing-the-future-a-transformative-webinar-activity-7223699922141761538-QevW"><img src="assets/img/bento-svgs/attach.png" alt=""></a>
-            <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">20th July 2024</p>
-            
+    <div id="card-area">
+      <div class="wrapper">
+        <div class="cards-wrapper">
+          <div class="card" onclick="showPopup('smart-electronics')" style="width: 18rem; background: linear-gradient(145deg, #f0f0f0, #d0d0d0); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border-radius: 15px; overflow: hidden; font-family: 'Roboto', sans-serif; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); display: flex; justify-content: center; align-items: center; transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 class="card-title" style="font-size: 28px; transform: perspective(500px) rotateX(20deg);">Smart Electronics</h3>
           </div>
-      </div>
-        <div class="bento-item" style="background-image: url(assets/img/bento-svgs/linkedinjpg.jpg);
-  background-position: center;background-position-x: left;">
-            <h1>Unlocking LinkedIn</h1>
-          <div class="date-attach-flex">
-            <a href="https://www.linkedin.com/posts/ieee-AIT-student-chapter_unlocking-linkedin-a-digital-odyssey-to-activity-7221912242932350977-7xDt"><img src="assets/img/bento-svgs/attach.png" alt=""></a>
-            <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">13th July 2024</p>
-            
+          <div class="card" onclick="showPopup('communication-tech')" style="width: 18rem; background: linear-gradient(145deg, #f0f0f0, #d0d0d0); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border-radius: 15px; overflow: hidden; font-family: 'Roboto', sans-serif; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); display: flex; justify-content: center; align-items: center; transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 class="card-title" style="font-size: 28px; transform: perspective(500px) rotateX(20deg);">Communication Technologies</h3>
           </div>
-        </div>
-        <div class="bento-item" style="background-image: url(assets/img/bento-svgs/iot.jpg);background-position: center;background-position-x: left;">
-            <h1>Big Data and IoT </h1>
-            <div class="date-attach-flex">
-              <a href="https://www.linkedin.com/posts/ieee-AIT-student-chapter_exploring-the-future-of-power-big-data-activity-7234197978180186112-esht"><img src="assets/img/bento-svgs/attach.png" alt="" ></a>
-              <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">22nd August 2024</p>
-              
-            </div>
-        </div>
-        <div class="bento-item bento-item-large" style="background-image: url(assets/img/bento-svgs/janakalyan.png);background-position: center;background-position-x: left;">
-            <h1>Jana Kalyan Hackathon </h1>
-            <div class="date-attach-flex">
-              <a href="https://www.linkedin.com/posts/ieee-AIT-student-chapter_catalysing-rural-development-the-triumph-activity-7180624432359477249-qTLu"><img src="assets/img/bento-svgs/attach.png" alt=""></a>
-              <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">16th & 17th February 2024</p>
-              
-            </div>
-        </div>
-        <div class="bento-item bento-item-large" style="background-image: url(assets/img/bento-svgs/octseminar.png);background-position: center;background-position-x: left;">
-            <h1>OCT seminar</h1>
-            <div class="date-attach-flex">
-              <a href="https://www.linkedin.com/posts/ieee-AIT-student-chapter_deep-learning-empowered-optical-coherence-activity-7157385285335425025-D51r"><img src="assets/img/bento-svgs/attach.png" alt="" ></a>
-              <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">6th October 2023</p>
-              
-            </div>
-        </div>
-        <div class="bento-item" style="background-image: url(assets/img/portfolio/portfolio-2.jpg);background-position: center;background-position-x: left;">
-            <h1>UI/UX</h1>
-            <div class="date-attach-flex">
-              <a href=""><img src="assets/img/bento-svgs/attach.png" alt="" ></a>
-              <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">13th August 2022</p>
-              
-            </div>
-        </div>
-        <div class="bento-item" style="background-image: url(assets/img/portfolio/portfolio-3.jpg);background-position: center;">
-          <h1>Wearable Antennas</h1>
-          <div class="date-attach-flex">
-            <a href=""><img src="assets/img/bento-svgs/attach.png" alt=""></a>
-            <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">9th September 2022</p>
-            
+          <div class="card" onclick="showPopup('informatics')" style="width: 18rem; background: linear-gradient(145deg, #f0f0f0, #d0d0d0); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border-radius: 15px; overflow: hidden; font-family: 'Roboto', sans-serif; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); display: flex; justify-content: center; align-items: center; transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 class="card-title" style="font-size: 28px; transform: perspective(500px) rotateX(20deg);">Informatics</h3>
           </div>
-        </div>
-        <div class="bento-item bento-item-large" style="background-image: url(assets/img/portfolio/portfolio-7.png);background-position: center;background-position-x: left;">
-          <h1>Startup Ecosystem</h1>
-          <div class="date-attach-flex">
-            <a href="https://www.linkedin.com/posts/ieee-AIT-student-chapter_ieee-AIT-startup-ugcPost-7101141392718016513-m4YA?utm_source=share&utm_medium=member_android"><img src="assets/img/bento-svgs/attach.png" alt="" ></a>
-            <p style="margin-right: 27px;display: inline-block ;padding-left: 10px;">23rd September, 2022</p>
-            
+          <div class="card" onclick="showPopup('machine-intelligence')" style="width: 18rem; background: linear-gradient(145deg, #f0f0f0, #d0d0d0); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border-radius: 15px; overflow: hidden; font-family: 'Roboto', sans-serif; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); display: flex; justify-content: center; align-items: center; transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 class="card-title" style="font-size: 28px; transform: perspective(500px) rotateX(20deg);">Machine Intelligence</h3>
           </div>
         </div>
       </div>
-    </section>
-    <!-- end of new workshop section -->
+    </div>
+  </div>
+</section>
+
+<!-- Popup Structure -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <div id="popup-details"></div>
+  </div>
+</div>
+
+<style>
+  .cards-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+  .card {
+    width: 220px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #02203d;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  .popup-content {
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  function showPopup(track) {
+    const details = {
+      'smart-electronics': `<h3>Smart Electronics</h3><ul>
+        <li>Design and development of advanced embedded systems.</li>
+        <li>Innovations in semiconductor devices and fabrication techniques.</li>
+        <li>MEMS and NEMS: Applications and advancements.</li>
+        <li>Flexible and wearable electronics.</li>
+        <li>Power electronics for renewable energy and electric vehicles.</li>
+        <li>Sensor technologies for IoT and smart applications.</li>
+        <li>Low-power and energy-efficient electronics.</li>
+        <li>Mixed-signal IC design and testing.</li>
+        <li>Hardware security and trusted computing.</li>
+      </ul>`,
+      'communication-tech': `<h3>Communication Technologies</h3><ul>
+        <li>5G/6G networks: Design, deployment, and challenges.</li>
+        <li>IoT communication protocols and architectures.</li>
+        <li>MIMO and massive MIMO systems.</li>
+        <li>Visible light and free-space optical communication.</li>
+        <li>Software-defined networking (SDN) and network virtualization.</li>
+        <li>Cognitive and cooperative communication systems.</li>
+        <li>Satellite and wireless communication advancements.</li>
+        <li>Quantum communication technologies.</li>
+        <li>Edge and fog computing for communication networks.</li>
+      </ul>`,
+      'informatics': `<h3>Informatics</h3><ul>
+        <li>Big data analytics and visualization techniques.</li>
+        <li>Cloud computing: Architectures and security challenges.</li>
+        <li>Blockchain technology and its applications.</li>
+        <li>Data mining and knowledge discovery in various domains.</li>
+        <li>Human-computer interaction and user experience design.</li>
+        <li>Geographic Information Systems (GIS) and spatial informatics.</li>
+        <li>Cybersecurity and information assurance.</li>
+        <li>E-governance and smart city informatics.</li>
+        <li>Green computing and sustainable information systems.</li>
+      </ul>`,
+      'machine-intelligence': `<h3>Machine Intelligence</h3><ul>
+        <li>Deep learning algorithms and architectures.</li>
+        <li>Explainable AI and ethical AI systems.</li>
+        <li>Reinforcement learning and real-time decision-making systems.</li>
+        <li>AI for natural language processing and computer vision.</li>
+        <li>Autonomous systems and robotics.</li>
+        <li>AI-driven predictive maintenance in industrial systems.</li>
+        <li>Hybrid AI models for complex problem-solving.</li>
+        <li>AI in healthcare: Diagnosis, drug discovery, and personalized medicine.</li>
+        <li>Federated learning and distributed AI models.</li>
+      </ul>`
+    };
+    document.getElementById("popup-details").innerHTML = details[track];
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const popup = document.getElementById("popup");
+    if (event.target === popup) {
+      closePopup();
+    }
+  };
+</script>
+
+<!-- End Events Section -->
+
+
+<!-- call for paper and dates  -->
+
+
+
+
+<section id="call-for-papers" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-12 content text-center" data-aos="fade-right" data-aos-delay="100">
+        <div class="section-title">
+          <h2 style="font-size: 2rem; font-weight: 700; text-transform: uppercase; color: #151e82;">Call for Papers</h2>
+        </div>
+        <p class="fst-italic" style="font-size: 1.4rem; font-weight: 500;">
+          ECMI-2025 invites the submission of original, high-quality research papers that have not been previously published.
+        </p>
+        <p class="fst-italic" style="font-size: 1.4rem; font-weight: 500;">
+          All accepted and presented papers will be submitted to <b>IEEE</b> for potential inclusion in the <b>Xplore Digital Library</b>.
+        </p>
+        <p class="fst-italic" style="font-size: 1.4rem; font-weight: 600; color: red;">
+          ⚠ ECMI-2025 takes plagiarism very seriously and considers it a professional misconduct.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- call for paper and dates end  -->
+
+
+
+<!-- ======= Important Dates Section ======= -->
+<section id="important-dates" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 style="font-size: 2rem; font-weight: 700; color: #151e82; text-transform: uppercase; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">
+        📅 Important Dates
+      </h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="table-responsive">
+          <table class="table table-bordered text-center" style="font-size: 1rem; font-weight: 500; border: 2px solid #241384;">
+            <thead style="background-color: #241384; color: white; font-size: 1.1rem;">
+              <tr>
+                <th>Event</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody style="color: #333; background-color: #fff; font-size: 1rem;">
+              <tr>
+                <td><strong>📌 Call for Papers</strong></td>
+                <td style="color: #151e82;"><strong>15<sup>th</sup> June 2025</strong></td>
+              </tr>
+              <tr>
+                <td><strong>📌 Full Length Paper Submission</strong></td>
+                <td style="color: #151e82;"><strong>30<sup>th</sup> August 2025</strong></td>
+              </tr>
+              <tr>
+                <td><strong>📌 Acceptance Notification</strong></td>
+                <td style="color: #151e82;"><strong>15<sup>th</sup> September 2025</strong></td>
+              </tr>
+              <tr>
+                <td><strong>📌 Final Paper Submission</strong></td>
+                <td style="color: #151e82;"><strong>25<sup>th</sup> October 2025</strong></td>
+              </tr>
+              <tr>
+                <td><strong>📌 Last Date for Registration</strong></td>
+                <td style="color: #151e82;"><strong>30<sup>th</sup> October 2025</strong></td>
+              </tr>
+              <tr>
+                <td><strong>📌 Conference Date</strong></td>
+                <td style="color: #151e82;"><strong>6<sup>th</sup> and 7<sup>th</sup> November 2025</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Important Dates Section -->
+
+
+<!-- ======= Payment Details Section ======= -->
+<section id="payment-details" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 style="font-size: 2rem; font-weight: 700; color: #151e82; text-transform: uppercase; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">
+        💳 Payment Details
+      </h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="table-responsive">
+          <table class="table table-bordered text-center" style="font-size: 1rem; font-weight: 500; border: 2px solid #241384;">
+            <thead style="background-color: #241384; color: white; font-size: 1.1rem;">
+              <tr>
+                <th>Region</th>
+                <th>Category</th>
+                <th>Non-IEEE Member</th>
+                <th>IEEE Member</th>
+              </tr>
+            </thead>
+            <tbody style="color: #333; background-color: #fff; font-size: 1rem;">
+              <!-- Indian Payment Details -->
+              <tr>
+                <td rowspan="3"><strong>🇮🇳 Indian</strong></td>
+                <td><strong>UG/PG Students/ Research Scholars</strong></td>
+                <td style="color: #151e82;"><strong>6500 INR</strong></td>
+                <td style="color: #151e82;"><strong>5200 INR</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Academician</strong></td>
+                <td style="color: #151e82;"><strong>7000 INR</strong></td>
+                <td style="color: #151e82;"><strong>5600 INR</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Industry Persons</strong></td>
+                <td style="color: #151e82;"><strong>8200 INR</strong></td>
+                <td style="color: #151e82;"><strong>7000 INR</strong></td>
+              </tr>
+              <!-- Foreign Payment Details -->
+              <tr>
+                <td rowspan="3"><strong>🌍 Foreign</strong></td>
+                <td><strong>UG/PG Students/ Research Scholars</strong></td>
+                <td style="color: #151e82;"><strong>85 USD</strong></td>
+                <td style="color: #151e82;"><strong>75 USD</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Academician</strong></td>
+                <td style="color: #151e82;"><strong>90 USD</strong></td>
+                <td style="color: #151e82;"><strong>80 USD</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Industry Persons</strong></td>
+                <td style="color: #151e82;"><strong>100 USD</strong></td>
+                <td style="color: #151e82;"><strong>90 USD</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Payment Details Section -->
+
+
+
+
+<!-- commitee-->
+
+<style>
+  .committee-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      gap: 20px; /* Space between cards */
+  }
+  .advisor {
+      background: #ffffff;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .advisor:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  .advisor h3 {
+      margin: 0;
+      color: #007BFF;
+  }
+  .advisor p {
+      margin: 5px 0 0;
+      color: #555;
+  }
+  @media (max-width: 768px) {
+      .committee-container {
+          grid-template-columns: 1fr; /* Single column on smaller screens */
+      }
+  }
+</style>
+
+
+<section class="container" id="committee">
+<div class="section-title">
+  <h2>Committee</h2>
+  <p>Organizing Members</p>
+</div>
+<div class="committee-container">
+  <div class="advisor">
+    <h3>Chief Patron</h3>
+    <p><strong>Sri Sri Sri Dr. Nirmalanandanatha Maha Swamiji</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Patron</h3>
+    <p><strong>Sri Gunanatha Swamiji</strong></p>
+    <p><strong>Dr. Vidya Shankar</strong></p>
+    <p><strong>Dr. C K Subbaraya</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>General Chair</h3>
+    <p><strong>Dr. C T Jayadeva</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Organizing Chair</h3>
+    <p><strong>Dr. Goutham M.A.</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Conference Chair</h3>
+    <p><strong>Dr. Suma M.</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Conference Co-Chair</h3>
+    <p><strong>Prof Madhuprakash R</strong></p>
+    <p><strong>Prof Nagaveni C.R</strong></p>
+    <p><strong>Prof RaghuKumar B S</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Steering Committee</h3>
+    <p><strong>Dr. AP Jagadeesh Chandra</strong></p>
+    <p><strong>Dr. G.T Raju</strong></p>
+    <p><strong>Prof. Sanjay Mathur</strong></p>
+    <p><strong>Dr. Surendiran</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Technical Program Committee</h3>
+    <p><strong>Dr. Kumada T</strong></p>
+    <p><strong>Dr. H R Vani</strong></p>
+    <p><strong>Dr. Harish M S</strong></p>
+    <p><strong>Dr. Usha K P</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Publication Chair</h3>
+    <p><strong>Dr. Anil Kumar C</strong></p>
+    <p><strong>Prof Mahesh D S</strong></p>
+    <p><strong>Prof Divya G S</strong></p>
+    <p><strong>Prof Manjukla U R</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Publicity Chair</h3>
+    <p><strong>Prof Harish Kumar C R</strong></p>
+    <p><strong>Prof Chandrakala</strong></p>
+    <p><strong>Prof Megha Shree M</strong></p>
+    <p><strong>Prof Girish S</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Web Management Committee</h3>
+    <p><strong>Prof Rajappa H S</strong></p>
+    <p><strong>Prof. Linet D’Souza</strong></p>
+  </div>
+  <div class="advisor">
+    <h3>Finance Chair Committee</h3>
+    <p><strong>Prof Anitha K T</strong></p>
+    <p><strong>Prof Tasmia Namreen</strong></p>
+  </div>
+    <div class="advisor">
+      <h3>International Advisory Committee</h3>
+      <p><strong>Prof. Francesco Flammini</strong> - Professor, Department of Computer Science, IDSIA USI-SUPSI, University of Applied Sciences and Arts of Southern Switzerland, Manno 6928, Switzerland</p>
+      <p><strong>Prof. Dr. Fadi Al-Turjman</strong> - Research Center for AI and IoT, AI and Robotics Institute, Near East University, Turkey</p>
+      <p><strong>Dr. Hong Li</strong> - University of Houston-Downtown</p>
+      <p><strong>Dr. Chawki Djeddi</strong> - Larbi Tebessi University, Algeria</p>
+      <p><strong>Dr. George Ghinea</strong> - Professor of Computer Science, Brunel University, London</p>
+    </div>
+    <div class="advisor">
+      <h3>National Advisory Committee</h3>
+      <p><strong>Dr. Sivasankar Elango</strong> - Associate Professor, Department of Computer Science & Engineering, National Institute of Technology, Tiruchirappalli, Tamilnadu</p>
+      <p><strong>Dr. Ananth Prabhu</strong> - Professor & Principal Investigator, Digital Forensics and Cyber Security Center of Excellence, Sahyadri College of Engineering & Management</p>
+      <p><strong>Dr. C.M Prashanth</strong> - Principal, MITE, Mangalore</p>
+      <p><strong>Dr. Shobha B.N</strong> - Principal, BGSIT</p>
+      <p><strong>Dr. Ravikumar G.K</strong> - Principal, BGSCET, Bengaluru</p>
+      <p><strong>Dr. T.G Basavaraju</strong> - Professor, Govt Engg College, Hassan</p>
+      <p><strong>Dr. Karunakara Rai</strong> - NMIT, Bengaluru</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- commitee end-->
+
 
 
 
@@ -285,9 +746,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonizals-3.jpg" class="testimonial-img" alt="c">
-                <h3>Professor 1</h3>
-                <h4> IEEE BS SIGHT CHAIR, IEEE AIT Branch Counsellor</h4>
+                
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Collaboration is key to the success of any project, and my team works seamlessly together to achieve our goals. Each member brings their unique skills and perspectives to the table, and together, we are greater than the sum of our parts.
@@ -298,9 +757,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimoniazls-1.jpg" class="testimonial-img" alt="c">
-                <h3>Professor 2</h3>
-                <h4>IEEE AIT Faculty Incharge</h4>
+                
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   As a mentor, it's incredibly rewarding to watch my team members grow and develop professionally. I strive to create an environment that fosters creativity, curiosity, and a passion for learning.
@@ -311,9 +768,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonialsz-2.jpg" class="testimonial-img" alt="  c">
-                <h3>Professor 3</h3>
-                <h4>IEEE AIT Faculty Incharge</h4>
+                
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   I firmly believe that the success of our team is a direct result of the supportive culture we have built. We encourage each other to take risks, learn from our mistakes, and never stop pushing ourselves to be better.
@@ -328,194 +783,44 @@
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container" data-aos="fade-up">
+    
 
+
+<br>
+
+    <section id="sponsors" class="py-5 bg-light">
+      <div class="container text-center">
         <div class="section-title">
-          <h2>Team</h2>
-          <p>Check our Team</p>
+          <h2 style="font-size: 2rem; font-weight: 700; color: #151e82; text-transform: uppercase; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">
+            Technical sponsor
+          </h2>
         </div>
 
-        <div class="row">
-
-          <div class="container">
-            <div class="row">
-              <!-- Ahad Bhati -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/AhadIm-min.jpg" class="img-fluid" alt="Ahad Bhati">
-                    <div class="social">
-                      <a href="https://www.instagram.com/ahad_bhati_1/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://in.linkedin.com/in/ahadbhati" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Ahad Bhati</h4>
-                    <span>Chairperson</span>
-                  </div>
-                </div>
+          <div class="row justify-content-center">
+              <div class="col-md-3 col-6 mb-4">
+                  <img src="assets/img/ieeeeeeeee.webp" class="img-fluid sponsor-logo" alt="IEEE Bangalore Section">
               </div>
-          
-              <!-- Atharva Tanpure -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="200">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Atharva1-min.JPG" class="img-fluid" alt="Atharva Tanpure">
-                    <div class="social">
-                      <a href="https://www.instagram.com/atharva.nt/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/atharvantanpure" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Atharva Tanpure</h4>
-                    <span>Vice Chairperson</span>
-                  </div>
-                </div>
+              <div class="col-md-3 col-6 mb-4">
+                  <img src="assets/img/sponsers/nuov.jpg" class="img-fluid sponsor-logo" alt="Nuvodev Bangalore">
               </div>
-          
-              <!-- Tanvi Joglekar -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="300">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Tanvi1-min.jpg" class="img-fluid" alt="Tanvi Joglekar">
-                    <div class="social">
-                      <a href="https://www.instagram.com/tanvii.joglekar/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/tanvi-joglekar" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Tanvi Joglekar</h4>
-                    <span>Secretary</span>
-                  </div>
-                </div>
+              <div class="col-md-3 col-6 mb-4">
+                  <img src="assets/img/sponsers/log.jpg" class="img-fluid sponsor-logo" alt="Loginware Solution Pvt Ltd">
               </div>
-          
-              <!-- Sunny Gupta -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="400">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Sunny1-min.JPG" class="img-fluid" alt="Sunny Gupta">
-                    <div class="social">
-                      <a href="https://www.instagram.com/sunnyy_11_/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/sunny-gupta-006582315" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Sunny Gupta</h4>
-                    <span>Event Manager</span>
-                  </div>
-                </div>
+              <div class="col-md-3 col-6 mb-4">
+                  <img src="assets/img/sponsers/cap.jpg" class="img-fluid sponsor-logo" alt="Capulus Technologies">
               </div>
-          
-              <!-- Gagandeep Bhakuni -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="500">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Gagandeep1-min.JPG" class="img-fluid" alt="Gagandeep Bhakuni">
-                    <div class="social">
-                      <a href="https://www.instagram.com/__gagandeep__05/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/gagandeep-singh-bhakuni" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Gagandeep Bhakuni</h4>
-                    <span>Treasurer</span>
-                  </div>
-                </div>
+              <div class="col-md-3 col-6 mb-4">
+                  <img src="assets/img/sponsers/bluepage.png" class="img-fluid sponsor-logo" alt="Blue Page Technologies">
               </div>
-          
-              <!-- Nidhi Gupta -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="600">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Nidhi1-min.jpg" class="img-fluid" alt="Nidhi Gupta">
-                    <div class="social">
-                      <a href="https://www.instagram.com/nidhii_048/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/nidhi-gupta-3a143a315" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Nidhi Gupta</h4>
-                    <span>Public Relations Head</span>
-                  </div>
-                </div>
+              <div class="col-md-3 col-6 mb-4">
+                  <img src="assets/img/sponsers/hers.png" class="img-fluid sponsor-logo" alt="Heraizen Technologies">
               </div>
-          
-              <!-- Radhika Joshi -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="700">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Radhika1-min.JPG" class="img-fluid" alt="Radhika Joshi">
-                    <div class="social">
-                      <a href="https://www.instagram.com/radhuuu_22/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/radhika-joshi-ag25" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Radhika Joshi</h4>
-                    <span>Creative Head</span>
-                  </div>
-                </div>
-              </div>
-          
-              <!-- Divyani Singh -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="800">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Divyani1-min.jpg" class="img-fluid" alt="Divyani Singh">
-                    <div class="social">
-                      <a href="https://www.instagram.com/diivyanii_s/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/divyani-singh-76539a286/" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Divyani Singh</h4>
-                    <span>Marketing Manager</span>
-                  </div>
-                </div>
-              </div>
-          
-              <!-- Aditi Chine -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="900">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/AditiImg-min.jpg" class="img-fluid" alt="Aditi Chine">
-                    <div class="social">
-                      <a href="https://www.instagram.com/_aditi_chine/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/aditi-chine-6a680931b" target='_blank'><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div class="member-info">
-                    <h4>Aditi Chine</h4>
-                    <span>Joint Secretary</span>
-                  </div>
-                </div>
-              </div>
-          
-              <!-- Nischay Sahoo -->
-              <div class="col-lg-5th col-md-6 d-flex">
-                <div class="member" data-aos="fade-up" data-aos-delay="1000">
-                  <div class="member-img">
-                    <img src="assets/img/new_team/Nischay1-min.JPG" class="img-fluid" alt="Nischay Sahoo">
-                    <div class="social">
-                      <a href="https://www.instagram.com/nishchay07._/" target='_blank'><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/nishchay-sahoo-39a9a3292" target='_blank'></a>
-                      </div>
-                    </div>
-                    <div class="member-info">
-                      <h4>Nischay Sahoo</h4>
-                      <span>Social Media Manager</span>
-                    </div>
-                  </div>
-                </div>
-        </div>
+          </div>
       </div>
-      </div>
-    </section><!-- End Team Section -->
+  </section>
 
- 
+  
+
 
 <!-- ======= Footer ======= -->
 <footer id="contact" class="footer">
@@ -523,26 +828,30 @@
     <div class="container">
       <div class="row">
 
-        <!-- Social Media Links and Contact Info -->
+        <!-- Contact Information -->
         <div class="col-lg-4 col-md-6 footer-info">
-          <h4>IEEE AIT</h4>
+          <h4>ECMI-2025</h4>
           <p>
-            A-Block, Thakur Educational Campus<br>
-            Shyamnarayan Thakur Marg, Thakur Village,<br>
-            Kandivali East, Mumbai, Maharashtra 400101<br>
-            <strong>Phone:</strong> +91 99876 24560<br>
-            <strong>Email:</strong> AIT@ieee.org<br>
+            Adichunchanagiri Institute of Technology (AIT)<br>
+            Chikkamagaluru, Karnataka, India<br>
+            <strong>Phone:</strong> +91 7795361426 (Prof. Madhuprakash)<br>
+            <strong>Phone:</strong> +91 8073552210 (Prof. Nagaveni C R)<br>
+            <strong>Phone:</strong> +91 9035903549 (Prof. Rajappa H S)<br>
+            <strong>Phone:</strong> +91 9448554971 (Dr. Goutham M A)<br>
+            <strong>Email:</strong> ecmi2025@aitckm.in<br>
+            <strong>Web:</strong> <a href="http://aitecmi.com" target="_blank">aitecmi.com</a>
           </p>
           <div class="social-links">
-            <a href="https://www.instagram.com/ieeeAIT/?hl=en" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" target="_blank" class="youtube"><i class="bi bi-youtube"></i></a>
-            <a href="https://in.linkedin.com/company/ieee-AIT-student-chapter?trk=public_post_feed-actor-name" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
           </div>
         </div>
+
         <!-- Newsletter Section -->
         <div class="col-lg-4 col-md-6 footer-newsletter">
           <h4>Our Newsletter</h4>
-          <p>Stay updated with the latest news and events.</p>
+          <p>Stay updated with the latest news and events of ECMI-2025.</p>
           <form action="" method="post">
             <input type="email" name="email" placeholder="Enter your email" class="form-control">
             <button type="submit" class="btn btn-primary mt-2">Subscribe</button>
@@ -568,12 +877,10 @@
               <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" onclick="SendEmail()">Send Message</button>
+              <button type="submit" class="btn btn-primary">Send Message</button>
             </div>
           </form>
         </div>
-
-        
 
       </div>
     </div>
@@ -583,16 +890,17 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <div class="copyright">
-          &copy; Copyright <strong><span>IEEE AIT</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>ECMI-2025</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          Developed by <a href="">IEEE AIT Technical Team.</a>
+          Developed by <a href="#">ECMI-2025 Web Management Committee</a>.
         </div>
       </div>
     </div>
   </div>
 </footer>
 <!-- End Footer -->
+
 
 
 
